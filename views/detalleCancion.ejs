@@ -1,0 +1,42 @@
+
+<%- include('./partials/links.ejs') %>
+<head>
+
+<link rel="stylesheet" href="/css/style.css">
+<%- include('./partials/header.ejs') %> 
+
+</head>
+
+<body>
+    <main>
+        <div id="ruta">
+            <a class="negro" href="/">listado </a> 
+        </div>
+
+
+
+        <article class="cancion-details">
+                    <a  class="TextoImportante">Titulo:</a> <%= cancion.titulo %>
+                <p>
+                    <a  class="TextoImportante">Duracion:</a>  <%= cancion.duracion %>
+                </p>
+                <p>
+                    <a  class="TextoImportante">Genero:</a>  <%= cancion.genero %>
+                </p>
+                <p>
+                    <a class="TextoImportante">Album:</a>  <%= cancion.album %>
+                </p>
+                <p>
+                    <a  class="TextoImportante">Artista:</a>   <%= cancion.artista %>
+                </p>
+            </article>
+    </main>
+
+    <a href="/canciones/editar/<%= cancion.id %>" class="boton-edit-delete">Editar cancion</a>
+       
+
+</body>
+
+<%- include('./partials/footer.ejs') %>
+
+</html>

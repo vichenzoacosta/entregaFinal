@@ -1,0 +1,28 @@
+{
+  "name": "entregafinal",
+  "version": "1.0.0",
+  "description": "entrega de proyectyo final",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vichenzoacosta/entregaFinal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vichenzoacosta/entregaFinal/issues"
+  },
+  "homepage": "https://github.com/vichenzoacosta/entregaFinal#readme"
+}

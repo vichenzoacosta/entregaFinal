@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<%- include('./partials/links.ejs') %>
+<head>
+
+<link rel="stylesheet" href="/css/style.css">
+<%- include('./partials/header.ejs') %> 
+
+</head>
+
+<body>
+
+  <h1>Listado de canciones</h1>
+  <a href="/canciones/crear" >agregar cancion</a>
+  <% canciones.forEach(canciones => { %> 
+    <article>
+        <a href="/canciones/detalle/<%= canciones.id %>">
+
+        <div class="cancione-titulo">
+            <h4><%= canciones.titulo %></h4>
+            
+
+        </div>
+    </a>
+    </article>
+    <% }) %>
+
+    
+
+</body>
+
+<%- include('./partials/footer.ejs') %>
+
+</html>
