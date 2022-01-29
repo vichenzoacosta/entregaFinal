@@ -11,18 +11,16 @@
 
   <h1>Listado de canciones</h1>
   <a href="/canciones/crear" >agregar cancion</a>
-  <% canciones.forEach(canciones => { %> 
-    <article>
-        <a href="/canciones/detalle/<%= canciones.id %>">
 
-        <div class="cancione-titulo">
-            <h4><%= canciones.titulo %></h4>
-            
-
-        </div>
-    </a>
-    </article>
-    <% }) %>
+  <p>Listado de canciones</p>
+  <ul>
+      <% for (let i = 0 ; i< canciones.length ; i++)
+      <li>
+        <a href="/canciones/detalle/<%= canciones[i].id"%>></a>
+    </li>
+  </ul>
+  
+   
 
     
 
