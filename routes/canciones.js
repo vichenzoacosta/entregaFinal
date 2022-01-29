@@ -1,24 +1,9 @@
-const express = require('express');
-const router = express();
-//const multer = require("multer");
-//const path = require("path")
+var express  = require('express')
+var router   = express.Router()
+
+var cancionesController = require("../controllers/cancionesController")
+router.get("/crear", cancionesController.crear )
+router.post("/crear", cancionesController.guardado )
 
 
-//--------controlador-----------//
-const controller = require('../controllers/cancionesControllers')
-
-
-// mostrar una cancion//
-
-router.get('/detalle/:id/', controller.detalle); 
-//crear una cancion
-
-router.get('/crear', controller.crear); 
-router.post('/',  controller.store);
-//editar una cancion
-
-router.get('/editar/:id', controller.editar); 
-router.post('/editar/:id',  controller.subir);
-
-
- module.exports = router
+module.exports = router

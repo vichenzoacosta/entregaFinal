@@ -12,9 +12,11 @@ app.set('view engine','ejs');
 app.set('views', path.join(__dirname, '/views'))
 
 //------sistema de ruteo y use()----------//
-const mainRouter = require('./routes/main')
+ 
 const cancionRouter = require('./routes/canciones')
-app.use('/', mainRouter);
+const indexRouter = require('./routes/index')
+
+app.use('/', indexRouter)
 app.use('/canciones', cancionRouter);
 
 app.listen(4000, ()=>{
