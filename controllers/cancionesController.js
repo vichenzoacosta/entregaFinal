@@ -16,8 +16,8 @@ let cancionesController = {
               albumes: req.body.albumes_id,
               artistas: req.body.artistas_id
             })
-            .then(createdProduct => {
-                res.redirect(`/products/${createdProduct.id}`);
+            .then(createdCancion => {
+                res.redirect(`/canciones/${createdCancion.id}`);
             })
             .catch(res.send);
      }
