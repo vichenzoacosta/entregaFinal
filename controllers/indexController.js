@@ -1,16 +1,19 @@
 let db = require('../database/models')
 
-
+//console.log(db.Cancion.findAll.toString() ,' hola soy la db')
 let index = {
-    mostrar: function ( req , res){
-        console.log(db)
-        db.Cancion.findAll()
-        .then(canciones => {
-            return res.render("listadoCanciones", {canciones:canciones})
-            
-        })
+    
+    list: (req, res) => {
+        console.log('soy la lista')
+        return db.Cancion.findAll()
+            .then(canciones => {
+                res.render('listadoCanciones.ejs', {canciones})
+            }).catch((error =>{
+                console.log(error)
+            }))
            
-     
+    } 
 }
-}
+
+
 module.exports = index

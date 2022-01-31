@@ -20,15 +20,16 @@ module.exports = function (sequelize, DataTypes) {
     }
     let config = {
         tableName: "albumes",
-        timestamps: false
+        timestamps: false,
+        underscored: false
     }
     let Album = sequelize.define(alias, cols, config);
 
-    Album.associate = function (models) {
-     Album.hasMany(models.Cancion, {
-            as: "canciones",
-            foreingKey: "album_id"
-        })}; 
+  //  Album.associate = function (models) {
+   //  Album.hasMany(models.Cancion, {
+    //        as: "canciones",
+   //         foreingKey: "album_id"
+    //    })}; 
         return Album
        
 }

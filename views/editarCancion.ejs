@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>editar cancion</h1>
+   
+        <form  action="/canciones/editar/<%= cancion.id %>" method="POST" enctype="multipart/form-data">
+                            
+            <label  for="titulo"><b>titulo</b></label>
+            <input  type="text" name="titulo" value = "<%= cancion.titulo %>"><br>
+            <label  for="duracion"><b>duracion</b></label>
+            <input  type= "time" name="duracion" value = "<%= cancion.duracion %>"><br>
+            <p>
+            Género:
+            <select name="genero">
+                
+                <% for(let i = 0 ; i < generos.length; i++){ %>
+                   
+                        <% if (generos[i].id == cancion.genero_id) {%> 
+                            <option value= "<%=generos[i].id%>" selected>
+                                <%= generos[i].name %>
+                            <% }else { %> 
+                                <option value= "<%=generos[i].id%>" >
+                                    <%= generos[i].name %>
+                                <%  } %> 
+                        
+                    </option>
+                  <% } %>
+                </select>
+            
+             </p>
+            <label for="album">album:</label>
+            <input type="album" id="album" name="albumes" value = "<%= cancion.album %>"><br> >
+            <label for="artista">artista:</label>
+            <input type="text" id="artista" name="artistas"value = "<%= cancion.artista %>"><br>
+            <button type="submit" class="buy-now-button">editar cancion</button>
+                                      
+           
+                                          
+    
+    </form>
+ 
+</body>
+</html>

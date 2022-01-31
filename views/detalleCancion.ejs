@@ -1,42 +1,50 @@
-
 <%- include('./partials/links.ejs') %>
-<head>
 
-<link rel="stylesheet" href="/css/style.css">
-<%- include('./partials/header.ejs') %> 
+    <head>
 
-</head>
+        <link rel="stylesheet" href="/css/style.css">
+        <%- include('./partials/header.ejs') %>
 
-<body>
-    <main>
-        <div id="ruta">
-            <a class="negro" href="/">listado </a> 
-        </div>
+    </head>
+
+    <body>
+        <main>
+            <div id="ruta">
+                <a class="negro" href="/">listado </a>
+            </div>
 
 
 
-        <article class="cancion-details">
-                    <a  class="TextoImportante">Titulo:</a> <%= cancion.titulo %>
-                <p>
-                    <a  class="TextoImportante">Duracion:</a>  <%= cancion.duracion + 'min' %>
-                </p>
-                <p>
-                    <a  class="TextoImportante">Genero:</a>  <%= cancion.genero %>
-                </p>
-                <p>
-                    <a class="TextoImportante">Album:</a>  <%= cancion.album %>
-                </p>
-                <p>
-                    <a  class="TextoImportante">Artista:</a>   <%= cancion.artista %>
-                </p>
+            <article class="cancion-details">
+                <a>Titulo:</a>
+                <%= cancion.titulo %>
+                    <p>
+                        <a>Duracion:</a>
+                        <%= cancion.duracion + 'seg' %>
+                    </p>
+                    <p>
+                        <a>Genero:</a>
+                        <%= cancion.genero %>
+                    </p>
+                    <p>
+                        <a>Album:</a>
+                        <%= cancion.album %>
+                    </p>
+                    <p>
+                        <a>Artista:</a>
+                        <%= cancion.artista %>
+                    </p>
             </article>
-    </main>
+        </main>
 
-    <a href="/canciones/editar/<%= cancion.id %>" class="boton-edit-delete">Editar cancion</a>
-       
+        <a href="/canciones/editar/<%= cancion.id %>" class="boton-edit-delete">Editar cancion</a>
+        <form action="/canciones/borrar/<%= cancion.id %>" method="post">
+            <button type="sumbir">borrar</button>
+        </form>
 
-</body>
 
-<%- include('./partials/footer.ejs') %>
+    </body>
 
-</html>
+    <%- include('./partials/footer.ejs') %>
+
+        </html>

@@ -16,7 +16,8 @@ module.exports = function (sequelize, DataTypes) {
     }
     let config = {
         tableName: "generos",
-        timestamps: false
+        timestamps: false,
+        underscored: false
     }
     let Genero = sequelize.define(alias, cols, config);
 

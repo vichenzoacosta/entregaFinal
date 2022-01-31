@@ -18,14 +18,17 @@ module.exports = function (sequelize, DataTypes) {
     }
     let config = {
         tableName: "artistas",
-        timestamps: false
+        timestamps: false,
+        underscored: false
     }
     let Artista = sequelize.define(alias, cols, config);
 
-    Artista.associate = function (models){
-    Artista.hasMany(models.Cancion, {
-        as: "canciones",
-        foreingKey: "artista_id"
-    })}; 
-    return Artista
+   // Artista.associate = function (models){
+   // Artista.hasMany(models.Cancion, {
+       //  as: "canciones",
+    ///     foreingKey: "artista_id"
+ //  })
+ return Artista
 }
+ 
+    

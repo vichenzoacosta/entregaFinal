@@ -1,0 +1,19 @@
+[
+ {
+  "id": 1,
+  "titulo": "top 5",
+  "duracion": 180,
+  "genero": "reggueton",
+  "album": "temporada de reggueton",
+  "artista": "duki"
+ },
+ {
+  "id": 2,
+  "titulo": "miti miti",
+  "duracion": 150,
+  "genero": "trap",
+  "album": "trapicheo",
+  "artista": "khea"
+ }
+  
+]
