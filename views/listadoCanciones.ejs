@@ -10,12 +10,12 @@
 <body>
 
   <h1>Listado de canciones</h1>
-  <a href="/canciones/crear" >agregar cancion</a>
+  <a href="/canciones/add" >agregar cancion</a>
 
 
   <% canciones.forEach(canciones => { %> 
     <article>
-        <a href="/canciones/detalle/<%= cancion.id %>">  
+        <a href="/canciones/detalle/<%= canciones.id %>">  
             
             <h4><%= canciones.titulo %></h4>
 

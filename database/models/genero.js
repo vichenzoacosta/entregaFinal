@@ -23,8 +23,8 @@ module.exports = function (sequelize, DataTypes) {
 
     Genero.associate = function (models){
     Genero.hasMany(models.Cancion, {
-        as: "canciones",
-        foreingKey: "genero_id"
+       
+        
     })}; 
     return Genero
 }

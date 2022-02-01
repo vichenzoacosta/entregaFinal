@@ -23,12 +23,10 @@ module.exports = function (sequelize, DataTypes) {
     }
     let Artista = sequelize.define(alias, cols, config);
 
-   // Artista.associate = function (models){
-   // Artista.hasMany(models.Cancion, {
-       //  as: "canciones",
-    ///     foreingKey: "artista_id"
- //  })
+    Artista.associate = function (models){
+    Artista.hasMany(models.Cancion)}
  return Artista
+
 }
  
     

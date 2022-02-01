@@ -5,8 +5,7 @@ module.exports = function (sequelize, DataTypes) {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: false,
-            notNull: true
+            autoIncrement: true,
         },
         titulo: {
             type: DataTypes.STRING,
@@ -15,21 +14,10 @@ module.exports = function (sequelize, DataTypes) {
         duracion: {
             type: DataTypes.INTEGER,
             
-        },
-        genero_id: {
-            type: DataTypes.INTEGER,
-            
-        },
-        album_id: {
-            type: DataTypes.INTEGER,
-           
-        },
-        artista_id: {
-            type: DataTypes.INTEGER,
-            
+        }
         }
 
-    }
+    
     let config = {
         tableName: "canciones",
         timestamps: false,
@@ -42,24 +30,17 @@ module.exports = function (sequelize, DataTypes) {
 
     Cancion.associate = function (models) {
         
-         Cancion.belongsTo(models.Album, {
-                as: "albumes",
-                foreingKey: "album_id",
-                underscored: true
-            }),
-        Cancion.belongsTo(models.Artista, {
-                as: "artistas",
-                foreingKey: "artista_id",
-                unerscored: true
-            }),
+         Cancion.belongsTo(models.Album, 
+                
+            ),
+        Cancion.belongsTo(models.Artista),
       
-        Cancion.belongsTo(models.Genero, {
-                    as: "genero",
-                    foreingKey: "genero_id",
-                    underscored: true
-                })
-            }; 
-
-
+        Cancion.belongsTo(models.Genero, 
+                   
+                    
+                )
+            
+            }
     return Cancion
- }
+}
+ 

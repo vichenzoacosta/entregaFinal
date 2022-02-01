@@ -3,20 +3,36 @@ const db = require("../database/models");
 //let db = require('../database/models')
 
 let cancionesController = {
+
+    detail: (req, res) => {
+        db.Cancion.findByPk(req.params.id)
+            .then(cancion => {
+                res.render('detalleCancion.ejs', {cancion});
+            });
+    },
     add: function (req, res) {
-     return db.Genero.findAll()
+     db.Genero.findAll()
       .then(function(generos){
-          return res.render("agregarCancion", {generos:generos})
-      })},
-      crear: function(){
-        db.Cancion.create({
+          return res.render("agregarCancion.ejs", {generos:generos})
+      })}
+    ,
+      crear: function(req, res, next){
+       console.log(req.body)
+        let body = {
             titulo: req.body.titulo,
             duracion: req.body.duracion,
-            genero: req.body.genero,
-            album: req.body.album,
-            artista: req.body.artista
-        })
-        res.redirect('/')
+            genero_id: req.body.genero,
+            album_id: req.body.album,
+            artista_id: req.body.artista
+        }
+          console.log(body)
+        db.Cancion.create(
+            body
+        ).then( res.redirect('/'))
+       .catch((error)=>{
+        console.log(error, 'soy viche y no entiendo nada')
+        next(error)
+       })
       },
     edit: function(req,res) {
         let cancionPedida = db.Cancion.findByPk(req.params.id);
@@ -29,6 +45,7 @@ let cancionesController = {
         
     },
     update: function (req,res) {
+        console.log(req.body.id)
         let cancionId = req.params.id;
         
        return db.Cancion.update(

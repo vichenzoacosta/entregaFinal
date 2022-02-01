@@ -15,7 +15,7 @@ try {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 } catch (error) {
-  console.log(error, 'hghsdakijghksadjghdsflg')
+  console.log(error, 'error')
 }
 console.log(config);
 

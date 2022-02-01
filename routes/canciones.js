@@ -4,14 +4,14 @@ var router   = express.Router()
 var cancionesController = require("../controllers/cancionesController")
 
 
-//router.get('/detalle/:id/', cancionesController.detail); 
+router.get('/detalle/:id/', cancionesController.detail); 
 
 
-router.get('/canciones/add', cancionesController.add);
-router.post('/canciones/crear', cancionesController.crear);
-router.get('/canciones/edit/:id', cancionesController.edit);
-router.post('/canciones/editar/:id', cancionesController.update);
-router.post('/canciones/borrar/:id', cancionesController.borrar);
+router.get('/add', cancionesController.add);
+router.post('/crear', cancionesController.crear);
+router.get('/edit/:id', cancionesController.edit);
+router.post('/editar/:id', cancionesController.update);
+router.post('/borrar/:id', cancionesController.borrar);
 
 
 

@@ -25,11 +25,10 @@ module.exports = function (sequelize, DataTypes) {
     }
     let Album = sequelize.define(alias, cols, config);
 
-  //  Album.associate = function (models) {
-   //  Album.hasMany(models.Cancion, {
-    //        as: "canciones",
-   //         foreingKey: "album_id"
-    //    })}; 
+    Album.associate = function (models) {
+     Album.hasMany(models.Cancion, {
+        
+        })}; 
         return Album
        
 }
