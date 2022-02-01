@@ -68,10 +68,8 @@ let cancionesController = {
         return db.Cancion.destroy({
             where: {
                 id: cancionId
-            }
-        })
-        res.redirect('/index')
-       
+            }})
+             res.redirect('/') 
     }
 }
 
